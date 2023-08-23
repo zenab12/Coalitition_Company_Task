@@ -1,0 +1,322 @@
+:root {
+  --main-color: #43506e;
+  --secondary-color: #b0b4be;
+  --footer-color: #63769d;
+  --main-light-color: #fefeff;
+  --main-dark-color: #4d4d4d;
+  --shadow-color: #303a4ead;
+  --transparent-light: #fefeffad;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("../fonts/Bebas-Regular.otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+nav {
+  background: transparent;
+  transition: all 0.5s linear;
+}
+
+nav.sticky {
+  background: var(--main-light-color);
+}
+
+.navbar .logo {
+  width: 50px;
+}
+
+#navbar .nav-link {
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--main-light-color);
+  font-family: "Lato", sans-serif;
+  text-decoration: underline;
+  padding: 0.6rem;
+  transition: all 0.3s linear;
+}
+
+#navbar .nav-link:hover {
+  color: var(--main-color);
+}
+
+nav.sticky #navbar .nav-link {
+  color: var(--main-color);
+}
+
+nav.sticky .logo-content span {
+  display: flex;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-content span {
+  display: none;
+  line-height: 1rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+}
+.logo-content span:first-of-type {
+  color: var(--main-dark-color);
+}
+.logo-content span:last-of-type {
+  color: var(--main-color);
+}
+
+
+header {
+  background: url("../images/hero\(2\).png") white;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+  margin-top: -76px;
+  mix-blend-mode: darken;
+  position: relative;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/heroCover.png");
+  background-size: cover;
+  opacity: 0.29;
+  z-index: 2;
+}
+
+header .header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+header .header-content {
+  padding-top: 12%;
+}
+header .header-content h1 {
+  color: var(--main-dark-color);
+  font-family: "Bebas", sans-serif;
+  font-size: 10rem;
+  letter-spacing: 0.5rem;
+  line-height: 9rem;
+  text-transform: uppercase;
+}
+header .header-content span {
+  letter-spacing: 0.7rem;
+  font-size: 10.2rem;
+  background: linear-gradient(
+    to bottom right,
+    var(--main-color),
+    var(--main-color),
+    var(--main-dark-color)
+  );
+  color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+#history {
+  background: url("../images/peak.png") no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  background-position: top;
+  filter: hue-rotate(21deg);
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding-top: 50px;
+}
+
+.history-content {
+  height: auto;
+}
+
+section h2 {
+  font-family: "Oswald", sans-serif;
+  color: var(--main-color);
+  position: relative;
+}
+
+section :is(h2 span:first-of-type) {
+  font-size: 8.5rem;
+  opacity: 0.5;
+}
+
+section :is(h2 span:last-of-type) {
+  font-size: 3rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 35%;
+  left: 9rem;
+}
+
+#history p {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "Lato", sans-serif;
+  max-width: 1100px;
+  margin-left: 6%;
+  margin-top: -20px;
+}
+
+.carousel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px 0px;
+  width: 100%;
+  height: auto;
+  background-color: var(--shadow-color);
+}
+
+.carousel img {
+  width: clamp(150px, 320px, 320px);
+  max-height: 180px;
+}
+
+.carousel-indicators {
+  left: 0;
+  top: auto;
+  bottom: -8px;
+}
+
+/* The colour of the indicators */
+.carousel-indicators button {
+  background: var(--main-dark-color);
+  border-radius: 50%;
+  width: 8px !important;
+  height: 8px !important;
+  border: 0px !important;
+}
+
+.carousel-indicators button.active {
+  width: 8px !important;
+  height: 8px !important;
+  background: var(--main-light-color) !important;
+}
+
+#team p {
+  font-family: "Lato", sans-serif;
+  color: var(--main-dark-color);
+  opacity: 0.8;
+  font-size: medium;
+}
+
+.team-tabs {
+  background-color: var(--main-color);
+}
+
+.team-tabs .accordion-item {
+  background-color: var(--main-color) !important;
+  border: 0 !important;
+  color: var(--secondary-color);
+}
+
+.team-tabs .nav-link {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+.team-tabs .nav-link:not(.collapsed) {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+
+.teams-accordion {
+  background: url("../images/accordion.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% center;
+  min-height: 93vh;
+}
+
+.accordion-item,
+.accordion-item:hover {
+  border-radius: 0 !important;
+}
+
+.accordion-body {
+  background: var(--transparent-light);
+  max-width: 320px;
+}
+.accordion-body h3 {
+  color: var(--main-color);
+  text-transform: uppercase;
+  padding-left: 1rem;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+}
+
+table {
+  margin: auto;
+}
+
+table td {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  font-family: "Lato", sans-serif;
+}
+
+footer {
+  background-color: var(--main-color);
+  padding: 20px;
+  color: var(--footer-color);
+  font-style: italic;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+}
+
+footer a span {
+  font-family: "Bebas";
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+footer img {
+  width: 40px;
+  height: 40px;
+  filter: hue-rotate(27deg);
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    margin-top: -200px;
+  }
+  .header-content {
+    padding-top: 70% !important;
+  }
+  h1,
+  h1 span {
+    font-size: 4rem !important;
+    line-height: 4rem !important;
+  }
+
+#history p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    width: 90%;
+  }
+}
